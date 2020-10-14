@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="workoutListViewModel"
+            type="com.jordanhintze.workouttracker.ui.workoutlist.WorkoutListViewModel" />
+        <variable
+            name="workout"
+            type="com.jordanhintze.workouttracker.model.Workout" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/workout_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> workoutListViewModel.onWorkoutClick(workout)}">
+
+        <TextView
+            android:id="@+id/workout_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5sp"
+            android:text="@{workout.title}"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/last_workout_date"
+            app:layout_constraintStart_toStartOf="@+id/last_workout_date"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/workout_title" />
+
+        <TextView
+            android:id="@+id/last_workout_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5sp"
+            android:text="@{workout.date.toString()}"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/workout_title"
+            tools:text="@string/last_workout_date_placeholder" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

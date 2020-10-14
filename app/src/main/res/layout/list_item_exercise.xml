@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="exerciseListViewModel"
+            type="com.jordanhintze.workouttracker.ui.exerciselist.ExerciseListViewModel" />
+        <variable
+            name="exercise"
+            type="com.jordanhintze.workouttracker.model.Exercise" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/exercise_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> exerciseListViewModel.onExerciseClick(exercise)}">
+
+        <TextView
+            android:id="@+id/exercise_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5sp"
+            android:text="@{exercise.name}"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/exercise_title" />
+
+        <TextView
+            android:id="@+id/exercise_reps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5sp"
+            android:text="@{exercise.reps}"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exercise_title"
+            tools:text="@string/exercise_name_hint" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

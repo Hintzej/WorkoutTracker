@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="workoutViewModel"
+            type="com.jordanhintze.workouttracker.ui.workout.WorkoutViewModel" />
+
+        <variable
+            name="workout"
+            type="com.jordanhintze.workouttracker.model.Workout" />
+    </data>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp">
+
+        <TextView
+            style="?android:listSeparatorTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/workout_title" />
+
+        <EditText
+            android:id="@+id/workout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/workout_name_hint" />
+
+        <Button
+            android:id="@+id/exercise_list_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/exercise_list_goto"
+            android:onClick="@{() -> workoutViewModel.onExercisesButtonClicked()}"/>
+
+    </LinearLayout>
+</layout>

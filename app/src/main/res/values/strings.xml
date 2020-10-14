@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WorkoutTracker</string>
+    <string name="workout_title">Workout Title</string>
+    <string name="last_workout_date_placeholder">Workout Date</string>
+    <string name="new_workout">New Workout</string>
+    <string name="workout_name_hint">Name of Workout</string>
+    <string name="exercise_name_hint">Name of Exercise</string>
+    <string name="exercise_title">Exercise Title</string>
+    <string name="exercise_list_goto">Go To Exercise List</string>
+    <string name="new_exercise">New Exercise</string>
+    <string name="rep_number_hint">Number of Reps</string>
+</resources>
